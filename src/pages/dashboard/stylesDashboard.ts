@@ -3,8 +3,11 @@ import styled from "styled-components";
 export const StyledHeaderDashboard = styled.div`
     background: #e0e0e0;
 
+    @media (max-width: 1000px) {
+    }
+
     header {
-        height: 70px;
+        height: 100px;
         width: 80%;
 
         display: flex;
@@ -13,7 +16,14 @@ export const StyledHeaderDashboard = styled.div`
 
         margin: 0 auto;
 
+        @media (max-width: 1000px) {
+            flex-direction: column;
+        }
+
         h1 {
+            @media (max-width: 1000px) {
+                font-size: 180%;
+            }
             span {
                 color: #eb6440;
             }
@@ -38,19 +48,22 @@ export const StyledHeaderDashboard = styled.div`
                 height: 70%;
                 width: 300px;
 
-                input {
-                    width: 100%;
-                    border: none;
-                    font-size: 105%;
-                    height: 100%;
+                @media (max-width: 1000px) {
+                    width: 70%;
                 }
+            }
+
+            input {
+                width: 100%;
+                border: none;
+                font-size: 105%;
+                height: 100%;
             }
         }
     }
 `;
 
 export const StyledDivDashboard = styled.div`
-
     display: flex;
     flex-direction: column;
 
@@ -80,6 +93,7 @@ export const StyledBoxDashboard = styled.div`
             border-radius: 8px;
 
             width: 30%;
+            min-width: 300px;
 
             overflow: hidden;
 
@@ -130,7 +144,7 @@ export const StyledBoxDashboard = styled.div`
             background: #27ae60;
             transition: 1s;
         }
-        li:hover img{
+        li:hover img {
             scale: 1.3;
             transition: 1s;
         }
@@ -202,8 +216,12 @@ export const StyledCart = styled.div`
                     width: 200px;
                     align-items: center;
 
+                    @media (max-width: 1000px) {
+                        width: 85px;
+                        height: 100%;
+                    }
                     img {
-                        width: 70%;
+                        width: 100%;
                     }
                 }
 
@@ -215,7 +233,11 @@ export const StyledCart = styled.div`
                     justify-content: space-between;
                     align-items: center;
 
-                    p{
+                    @media (max-width: 1000px) {
+                        height: 60%;
+                    }
+
+                    p {
                         font-size: 130%;
                     }
                 }

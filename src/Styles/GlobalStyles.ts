@@ -8,8 +8,9 @@ export const GlobalStyle = createGlobalStyle`
 
     }
     body{
-    overflow-x: hidden;
-
+        overflow-x: hidden;
+        width: 100%;
+        height: 100%;
     }
 
     h1, h2, h3, h4, h5, h6, span, a, li, button, input, p, select, label {

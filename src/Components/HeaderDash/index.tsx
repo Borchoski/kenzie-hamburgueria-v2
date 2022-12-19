@@ -106,6 +106,8 @@ export const Header = () => {
                         background: "#fff",
                         padding: 0,
                         border: "none",
+                        inset: 0,
+                        top: '50px',
                     },
                 }}
             >
