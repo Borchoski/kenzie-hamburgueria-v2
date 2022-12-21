@@ -1,4 +1,4 @@
-export function EmptyCart() {
+export const EmptyCart = () => {
     return (
         <div
             style={{

@@ -7,7 +7,7 @@ export const StyledHeaderDashboard = styled.div`
     }
 
     header {
-        height: 100px;
+        height: 70px;
         width: 80%;
 
         display: flex;
@@ -18,6 +18,7 @@ export const StyledHeaderDashboard = styled.div`
 
         @media (max-width: 1000px) {
             flex-direction: column;
+            height: 100px;
         }
 
         h1 {

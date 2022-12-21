@@ -32,9 +32,7 @@ export const CartProvider = ({ children }: iContextProps) => {
                 });
 
                 setProductList(response.data);
-                //console.log(response.data);
             } catch (error) {
-                // console.log(error);
             }
         }
         getProducts();

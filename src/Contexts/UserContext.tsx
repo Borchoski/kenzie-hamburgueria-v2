@@ -3,7 +3,6 @@ import { SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { Api } from "../Services/mainApi";
 
-
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -33,7 +32,7 @@ export const UserProvider = ({ children }: iContextProps) => {
 
             setUser(response.data);
 
-            localStorage.   setItem(
+            localStorage.setItem(
                 "@burgerKenzie:token",
                 response.data.accessToken
             );
@@ -43,7 +42,7 @@ export const UserProvider = ({ children }: iContextProps) => {
             setTimeout(() => navigate("/dashboard"), 3000);
         } catch (error) {
             console.log(error);
-            toast.error('Ops... algo deu errado')
+            toast.error("Ops... algo deu errado");
         }
     };
 
@@ -67,13 +66,13 @@ export const UserProvider = ({ children }: iContextProps) => {
             setTimeout(() => navigate("/dashboard"), 3000);
         } catch (error) {
             console.log(error);
-            toast.error('Ops... algo deu errado')
-
+            toast.error("Ops... algo deu errado");
         }
     };
 
     const LogOut = () => {
         localStorage.removeItem("@burgerKenzie:token");
+        setUser(null);
         navigate("/");
     };
 

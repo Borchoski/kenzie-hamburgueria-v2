@@ -3,15 +3,18 @@ import { Header } from "../../Components/HeaderDash";
 import { CartContext } from "../../Contexts/CartContext";
 import { StyledDivDashboard, StyledBoxDashboard } from "./stylesDashboard";
 import { iList } from "../../Components/Types&Intefaces";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { UserContext } from "../../Contexts/UserContext";
 import { toast } from "react-toastify";
 
 export const Dashboard = () => {
+    const navigate = useNavigate();
+
     const { productList, productCart, setProductCart } =
         useContext(CartContext);
-    const { user } = useContext(UserContext)
+    const { user } = useContext(UserContext);
 
+ 
     const productLi = (element: iList, index: number): ReactNode => {
         return (
             <li key={index}>
@@ -31,7 +34,7 @@ export const Dashboard = () => {
                             if (finder === "") {
                                 setProductCart([...productCart, element]);
                             }
-                            toast.success(`${element.name} adicionado`)
+                            toast.success(`${element.name} adicionado`);
                         }}
                     >
                         Adicionar
@@ -41,7 +44,9 @@ export const Dashboard = () => {
         );
     };
 
-    return user ? (
+    const token = localStorage.getItem('@burgerKenzie:token')
+
+    return token ? (
         <StyledDivDashboard>
             <Header />
             <StyledBoxDashboard>
@@ -53,5 +58,7 @@ export const Dashboard = () => {
                 </ul>
             </StyledBoxDashboard>
         </StyledDivDashboard>
-    ) : <Navigate to={"/"} />
+    ) : (
+        <Navigate to="/" />
+    );
 };
