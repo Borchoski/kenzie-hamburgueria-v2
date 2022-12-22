@@ -3,12 +3,11 @@ import { Header } from "../../Components/HeaderDash";
 import { CartContext } from "../../Contexts/CartContext";
 import { StyledDivDashboard, StyledBoxDashboard } from "./stylesDashboard";
 import { iList } from "../../Components/Types&Intefaces";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { UserContext } from "../../Contexts/UserContext";
 import { toast } from "react-toastify";
 
 export const Dashboard = () => {
-    const navigate = useNavigate();
 
     const { productList, productCart, setProductCart } =
         useContext(CartContext);
@@ -44,9 +43,9 @@ export const Dashboard = () => {
         );
     };
 
-    const token = localStorage.getItem('@burgerKenzie:token')
+    const token = localStorage.getItem('@burgerKenzie:token') || ''
 
-    return token ? (
+    return token !== '' ? (
         <StyledDivDashboard>
             <Header />
             <StyledBoxDashboard>
